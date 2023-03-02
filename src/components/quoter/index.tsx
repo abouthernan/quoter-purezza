@@ -4,7 +4,7 @@ import styles from './Quoter.module.css'
 
 export function Quoter (): JSX.Element {
   const { setData } = useContext(DataContext)
-  const handleSubmit = e => {
+  const handleSubmit = (e: any): any => {
     e.preventDefault()
 
     const item1 = e.target.item1.value
@@ -40,7 +40,7 @@ export function Quoter (): JSX.Element {
     const totalPurezza = Number(margenPurezza.toFixed(2).split('.')[1])
 
     const graphic = document.querySelector('#quoter')
-    graphic.scrollIntoView({ behavior: 'smooth' })
+    if (graphic !== null) graphic.scrollIntoView({ behavior: 'smooth' })
 
     setTimeout(() => {
       setData({

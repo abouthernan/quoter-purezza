@@ -10,7 +10,7 @@ export interface DataContextProps {
   setData: (data: Data) => void
 }
 
-export const DataContext = createContext<DataContextProps>({})
+export const DataContext = createContext({} as DataContextProps)
 
 export function DataProvider ({ children }: any): JSX.Element {
   const [data, setData] = useState<Data>({
