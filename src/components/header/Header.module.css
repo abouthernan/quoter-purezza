@@ -1,0 +1,27 @@
+  .header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .header img {
+    width: 12rem;
+    height: 6.5rem;
+    aspect-ratio: 16/9;
+    object-fit: contain;
+    filter: invert(100%);
+    margin: 1rem 0 0;
+  }
+
+  @media (min-width: 768px) {
+    .header img {
+      width: 20rem;
+      height: 10rem;
+    }
+
+    .header {
+      max-width: 120rem;
+      margin: 0 auto;
+      justify-content: flex-start;
+    }
+  }

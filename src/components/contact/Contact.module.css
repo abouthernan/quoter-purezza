@@ -1,0 +1,40 @@
+.section {
+  margin-top: 5rem;
+  min-height: 35rem;
+  display: grid;
+  place-items: center;
+  background-image: url('contact.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  padding: 0 1rem;
+}
+
+.section a {
+  display: block;
+  width: 100%;
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 1.5rem 0;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: var(--semi);
+  font-size: 1.6rem;
+  border: 1px solid var(--white);
+  background: rgb(255 255 255 / 40%);
+  color: var(--white);
+  margin-top: 2rem;
+  text-decoration: none;
+  transition: all .3s ease;
+}
+
+.section a:hover {
+  box-shadow: 0 0 10px rgb(255 255 255 / 10%);
+}
+
+@media (min-width: 768px) {
+  .section {
+    min-height: 50rem;
+  }
+}
