@@ -18,18 +18,6 @@
   height: 100%;
 }
 
-.bar::after {
-  content: 'costos';
-  font-size: 1.4rem;
-  font-weight: 600;
-  position: absolute;
-  top: 3rem;
-  left: -1rem;
-  width: 100%;
-  height: 100%;
-  transform: translateX(calc(100% - 4.1rem))
-}
-
 .bar.black::before,
 .bar.black::after {
   color: var(--black);
@@ -55,3 +43,19 @@
   z-index: 2;
 }
 
+.span.top::after {
+  content: 'costos';
+  font-size: 1.4rem;
+  font-weight: 600;
+  position: absolute;
+  top: 1rem;
+  left: 1.5rem;
+  width: max-content;
+  height: max-content;
+  transform: rotateZ(-90deg);
+  color: var(--white);
+}
+
+.span.top.black::after {
+  color: var(--black);
+}
