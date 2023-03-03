@@ -32,16 +32,6 @@
   background: var(--white);
 }
 
-.item:last-child::after {
-  content: "";
-  background: url("logo.png");
-  background-size: cover;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  filter: invert(1);
-}
-
 .item img {
   width: 100%;
   height: 100%;
