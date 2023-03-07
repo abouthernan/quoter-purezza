@@ -93,7 +93,7 @@ export function Quoter (): JSX.Element {
 
           <div className={styles.item}>
             <label htmlFor="item4">
-              ¿Cuántos días al mes está abierto el estableciminto?
+              ¿Cuántos días al mes está abierto el establecimiento?
             </label>
             <input
               type="number"
