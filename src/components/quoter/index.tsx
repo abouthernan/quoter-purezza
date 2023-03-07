@@ -7,45 +7,45 @@ export function Quoter (): JSX.Element {
   const handleSubmit = (e: any): any => {
     e.preventDefault()
 
-    const item1 = e.target.item1.value
-    const item2 = e.target.item2.value
-    const item3 = e.target.item3.value
-    const item4 = e.target.item4.value
+    const vendidas = e.target.item1.value // número de botellas vendidas al día
+    const costo = e.target.item2.value // costo por cada botella
+    const venta = e.target.item3.value // valor de venta de la botella
+    const dias = e.target.item4.value // días al mes que está abierto el establecimiento
 
-    // ¿Cuántas botellas de agua vendes al día? = item1 x item4
-    const input1 = item1 * item4
-    // ¿Cuánto pagas por cada botella? = item2 x totalInput1
-    const input2 = item2 * input1
-    // ¿Cuál es el valor de venta de la botella de agua? = item3 x totalInput1
-    const input3 = input1 * item3
-    // ¿Cuantos días al mes está abierto el establecimiento al público? = item4
+    // Cálculo de totáles
+    const totalVendidas = vendidas * dias // número de botellas vendidas al mes
+    const totalCosto = costo * totalVendidas // costo total de las botellas vendidas al mes
+    const totalVenta = venta * totalVendidas // valor total de las botellas vendidas al mes
 
-    const estimadoOther = 0.08
-    const estimadoPurezza = 0.013
+    const costosOcultos = 0.08 // costos ocultos estimados para la marca A (8%)
+    const costosOcultosB = 0.013 // costos ocultos estimados para la marca B (1.3%)
 
-    // OTHER
-    const tmp = input2 * estimadoOther
-    const costoTotal = input2 + tmp
-    // const rentabilidad = input3 - costoTotal
-    const margenOther = -(costoTotal / input3 - 1)
-    // const costoOther = costoTotal / input3
+    const rentaMensualB = 990000 // renta mensual para la marca B
+    const costoBotellaB = (rentaMensualB / dias) / vendidas // costo de la botella de la marca B
 
-    // PUREZZA
-    const tmpPurezza = input2 * estimadoPurezza
-    const costoTotalPurezza = input2 + tmpPurezza
-    // const rentabilidadPurezza = input3 - costoTotalPurezza
-    const margenPurezza = -(costoTotalPurezza / input3 - 1)
+    const tmpOcultos = totalCosto * costosOcultos
+    const tmpOcultosB = rentaMensualB * costosOcultosB
 
-    const totalOther = Number(margenOther.toFixed(2).split('.')[1])
-    const totalPurezza = Number(margenPurezza.toFixed(2).split('.')[1])
+    // Cálculo de la ganancia neta diaria y mensual para la marca A
+    const costoTotalA = totalCosto + tmpOcultos
+    const rentabilidadA = totalVenta - costoTotalA
+    const porcentajeGananciaA = +rentabilidadA / totalVenta * 100
+
+    // Cálculo de la ganancia neta diaria y mensual para la marca B
+    const costoTotalB = rentaMensualB + tmpOcultosB
+    const rentabilidadB = totalVenta - costoTotalB
+    const porcentajeGananciaB = +rentabilidadB / totalVenta * 100
+
+    const totalOther = porcentajeGananciaA.toFixed(2).split('.')[0]
+    const totalPurezza = porcentajeGananciaB.toFixed(2).split('.')[0]
 
     const graphic = document.querySelector('#quoter')
     if (graphic !== null) graphic.scrollIntoView({ behavior: 'smooth' })
 
     setTimeout(() => {
       setData({
-        valueOther: totalOther,
-        valuePurezza: totalPurezza
+        valueOther: Number(totalOther),
+        valuePurezza: Number(totalPurezza)
       })
     }, 800)
   }
