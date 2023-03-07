@@ -35,8 +35,6 @@ body {
 progress {
   -webkit-appearance: none;
   appearance: none;
-  width: 100%;
-  max-width: 465px;
   height: 3rem;
   background: var(--white);
   border: none;
