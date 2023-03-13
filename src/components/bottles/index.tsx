@@ -12,7 +12,7 @@ export function Bottles (): JSX.Element {
     <div id="quoter" className={styles.content}>
       <div className={styles.item}>
         <img
-          src="with-bottle-current.webp"
+          src="with-bottle-current.png"
           alt="puede ser una imagen de un par de botellas de plástico"
         />
         <ProgressBar value={valueOther} black />
