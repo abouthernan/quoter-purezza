@@ -1,6 +1,6 @@
 .section {
   margin-top: 5rem;
-  min-height: 35rem;
+  min-height: 40rem;
   display: grid;
   place-items: center;
   background-image: url("../contact.webp");
