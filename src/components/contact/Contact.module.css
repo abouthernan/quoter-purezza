@@ -1,6 +1,6 @@
 .section {
   margin-top: 5rem;
-  min-height: 40rem;
+  min-height: 35rem;
   display: grid;
   place-items: center;
   background-image: url("../contact.webp");
@@ -23,7 +23,7 @@
   font-size: 1.6rem;
   background: var(--black);
   color: var(--white);
-  margin-top: 2rem;
+  margin-top: 24rem;
   text-decoration: none;
   transition: all 0.3s ease;
 }
@@ -35,5 +35,9 @@
 @media (min-width: 768px) {
   .section {
     min-height: 50rem;
+  }
+
+  .section a {
+    margin-top: 2rem;
   }
 }
