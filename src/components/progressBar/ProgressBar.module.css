@@ -5,11 +5,11 @@
   width: 100%;
   max-width: 56rem;
   transform: rotateZ(-90deg) translate(50%);
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 .bar::before {
-  content: 'rentabilidad';
+  content: "rentabilidad";
   font-size: 1.4rem;
   font-weight: 600;
   position: absolute;
@@ -20,7 +20,7 @@
 }
 
 .bar::after {
-  content: 'costos';
+  content: "costos";
   font-size: 1.4rem;
   font-weight: 600;
   position: absolute;
@@ -39,7 +39,6 @@
 
 .bar.black::before,
 .bar.black::after {
-  color: var(--black);
   font-weight: 600;
 }
 
