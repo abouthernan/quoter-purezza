@@ -17,6 +17,7 @@
   left: 0;
   width: 100%;
   height: 100%;
+  z-index: 5;
 }
 
 .bar::after {
@@ -29,6 +30,7 @@
   width: 100%;
   height: 100%;
   color: var(--white);
+  z-index: 5;
 }
 
 @media (min-width: 768px) {
