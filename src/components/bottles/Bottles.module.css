@@ -27,6 +27,7 @@
   height: 100%;
   max-width: 50rem;
   max-height: 50rem;
+  overflow: hidden;
 }
 
 .item:first-child::before {

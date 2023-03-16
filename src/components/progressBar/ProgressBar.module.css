@@ -9,6 +9,7 @@
 }
 
 .bar::before {
+  display: none;
   content: "rentabilidad";
   font-size: 1.4rem;
   font-weight: 600;
@@ -21,6 +22,7 @@
 }
 
 .bar::after {
+  display: none;
   content: "costos";
   font-size: 1.4rem;
   font-weight: 600;
@@ -36,7 +38,7 @@
   position: absolute;
   width: 100%;
   bottom: 0rem;
-  left:  10rem;
+  left: 60%;
   height: 100%;
   z-index: 1;
   transform: rotate(-90deg);
@@ -47,20 +49,22 @@
   width: 100%;
   bottom: 12.7rem;
   height: 100%;
-  left: 10rem;
+  left: 60%;
   z-index: 1;
   transform: rotate(-90deg);
 }
 
-@media (min-width: 768px) {
-
-  .costos,
-  .rentabilidad {
+@media (max-width: 480px) {
+  .bar::before {
+    display: none;
+  }
+  .bar::after {
     display: none;
   }
 
-  .bar::after {
-    left: 88%;
+  .costos,
+  .rentabilidad {
+    right: 0;
   }
 }
 
@@ -88,6 +92,16 @@
 @media (min-width: 768px) {
   .span {
     right: 19.2%;
+  }
+
+  .bar::after,
+  .bar::before {
+    display: block;
+  }
+
+  .costos,
+  .rentabilidad {
+    display: none;
   }
 }
 
